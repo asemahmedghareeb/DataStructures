@@ -28,16 +28,17 @@ namespace app
             linkedList list2 = new linkedList();
             list2.insert_sorted(1);
             list2.insert_sorted(2);
+            list2.insert_sorted(3);
+            list2.insert_sorted(4);
 
-            list2.print();
-            list2.Swap_head_and_tail();
+
      
 
 
+            list2.Left_Rotate(200000);
             list2.print();
 
-
-            list2.debug_verify_data_integrity();
+            //list2.debug_verify_data_integrity();
 
 
         }
@@ -101,7 +102,36 @@ namespace app
 
             }
         }
+        
+        public void Left_Rotate(int k)
+        {
 
+            if (k % length == 0) return;
+            if (k > length) k = k % length;
+
+            int counter = 1;
+            node last = null;
+            for(node cur=head;cur!=null;cur = cur.next)
+            {
+                if (counter == k)
+                {
+                    last = cur;
+                }
+                ++counter;
+            }
+
+            node newhead=last.next;
+            last.next = null;
+            tail.next = head;
+            head = newhead;
+            tail = last;
+        }
+
+
+        public void Remove_Duplicates()
+        {
+
+        }
 
 
 
