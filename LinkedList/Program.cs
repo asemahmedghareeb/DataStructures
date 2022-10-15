@@ -24,21 +24,16 @@ namespace app
     //-----------------------------------------------------------//
         static void Main()
         {
- 
             linkedList list2 = new linkedList();
-            list2.insert_sorted(1);
-            list2.insert_sorted(2);
-            list2.insert_sorted(3);
-            list2.insert_sorted(4);
 
 
-     
 
 
-            list2.Left_Rotate(200000);
-            list2.print();
+            list2.insert_end(32333);
 
-            //list2.debug_verify_data_integrity();
+            Console.WriteLine(list2.Max());
+
+            list2.debug_verify_data_integrity();
 
 
         }
@@ -64,6 +59,75 @@ namespace app
         public node tail = null;
         public int length=0;
         //medium problems
+
+
+        public int Max(node cur = null,int max=int.MinValue,int c=1)
+        {
+            if(c==1) cur = head;
+
+            if (length == 0)
+            {
+                Console.Write("the list is empty ");
+                return max;
+            }
+            else
+            {
+
+                if (cur.next == null)
+                {
+                    if (cur.value >= max) max = cur.value;
+                    Console.Write("max value is : ");
+                    return max;
+                }
+                else if (cur.value >= max) max= cur.value;
+
+                return Max(cur.next,max,++c);
+            }
+        }
+        public bool delete_by_value(int val)
+        {
+            if (head.value == val)
+            {
+                delete_first();
+                return true;
+            }
+            if (tail.value == val)
+            {
+                deleteLastNode();
+                return true;
+            }
+
+            for(node cur = head; cur.next != null; cur = cur.next)
+            {
+                if (cur.next.value == val)
+                {
+                    node temp = cur.next.next;
+                    cur.next.next = null;
+                    cur.next = temp;
+                    length--;
+                    return true; 
+                }
+            }
+            return false;
+        }
+
+        public void Move_To_Back(int key)
+        {
+            int counter = 0;
+            
+            bool cas = delete_by_value(key);
+            while (cas)
+            {
+                counter++;
+                cas= delete_by_value(key);  
+            }
+
+            for (int i = 0; i <counter; i++)
+            {
+                insert_end(key);
+            }
+        }
+
         public void Swap_head_and_tail()
         {
             if (length == 1)
@@ -130,9 +194,46 @@ namespace app
 
         public void Remove_Duplicates()
         {
-
+            //search for every
+            for(node cur = head; cur != null; cur = cur.next)
+            {
+                string indx = "";
+                int counter = 1;
+                for(node cur2 = head; cur2 != null; cur2 = cur2.next)
+                {
+                    if (cur.value == cur2.value)
+                    {
+                        indx += counter;
+                    }
+                        counter++;
+                }
+                int corrector = 0;
+                for(int i = 1; i < indx.Length; i++)
+                {
+                    deleteNthNOde(indx[i]-corrector-48);
+                    corrector++;
+                }
+            }
         }
 
+        public void remove_last_occurance(int key)
+        {
+            string indx = "";
+            int counter = 1;
+                for (node cur2 = head; cur2 != null; cur2 = cur2.next)
+                {
+                    if (cur2.value ==key)
+                    {
+                        indx += counter;
+                    }
+                    counter++;
+                }
+            if (indx.Length == 0 ) return;
+            deleteNthNOde(indx[indx.Length-1]-48);
+                    
+                
+            
+        }
 
 
         //easy problems
@@ -158,7 +259,7 @@ namespace app
 
         public void insert_sorted(int num)
         {
-            if (head==null||head.value>num)
+            if (head==null||head.value>=num)
             {
                 insert_front(num);
 
