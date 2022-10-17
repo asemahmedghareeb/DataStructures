@@ -1,0 +1,15 @@
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\bin\Debug\net6.0\DoublyLInkedList.exe
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\bin\Debug\net6.0\DoublyLInkedList.deps.json
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\bin\Debug\net6.0\DoublyLInkedList.runtimeconfig.json
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\bin\Debug\net6.0\DoublyLInkedList.dll
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\bin\Debug\net6.0\DoublyLInkedList.pdb
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.csproj.AssemblyReference.cache
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.AssemblyInfoInputs.cache
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.AssemblyInfo.cs
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.csproj.CoreCompileInputs.cache
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.dll
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\refint\DoublyLInkedList.dll
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.pdb
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\DoublyLInkedList.genruntimeconfig.cache
+C:\Users\win11\OneDrive\Desktop\DataStructure\DoublyLInkedList\obj\Debug\net6.0\ref\DoublyLInkedList.dll

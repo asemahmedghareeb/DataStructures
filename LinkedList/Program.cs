@@ -13,6 +13,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Transactions;
 using System.Xml.Linq;
 
 
@@ -24,16 +25,20 @@ namespace app
     //-----------------------------------------------------------//
         static void Main()
         {
-            linkedList list2 = new linkedList();
+            linkedList list = new linkedList();
+
+            list.insert_end(1);
+            list.insert_end(2);
+            list.insert_end(3);
+            list.insert_end(4);
 
 
+            list.print();
+            list.Arrange_odd_even_node();
+            list.print();
 
 
-            list2.insert_end(32333);
-
-            Console.WriteLine(list2.Max());
-
-            list2.debug_verify_data_integrity();
+            list.debug_verify_data_integrity();
 
 
         }
@@ -58,58 +63,54 @@ namespace app
         public node head = null;
         public node tail = null;
         public int length=0;
+
+
+
+        //hard problems
+        public void Arrange_odd_even_node()
+        {
+            int counter = 1;
+            node cur = head;node prev = null;
+            for(int i=1;i<length;i++)
+            {
+                if (i%2==0)
+                {
+                    node cur2 = cur;
+                    prev.next = cur2.next;
+                    tail.next = cur2;
+                    cur2.next = null;
+                    tail = cur2;
+                    cur = prev.next;
+
+
+
+                }
+
+                
+                prev = cur;
+            }
+        }
+
+
         //medium problems
 
 
-        public int Max(node cur = null,int max=int.MinValue,int c=1)
+        public int Max(node cur = null, int max = int.MinValue, bool firstCall = true)
         {
-            if(c==1) cur = head;
-
-            if (length == 0)
-            {
-                Console.Write("the list is empty ");
-                return max;
-            }
-            else
-            {
-
+            if (firstCall) { cur = head;firstCall = false; if (length==1) return cur.value; }
+                if (cur.value >= max) max= cur.value;
                 if (cur.next == null)
                 {
-                    if (cur.value >= max) max = cur.value;
                     Console.Write("max value is : ");
                     return max;
                 }
-                else if (cur.value >= max) max= cur.value;
-
-                return Max(cur.next,max,++c);
-            }
+                return Max(cur.next,max,false);
         }
-        public bool delete_by_value(int val)
-        {
-            if (head.value == val)
-            {
-                delete_first();
-                return true;
-            }
-            if (tail.value == val)
-            {
-                deleteLastNode();
-                return true;
-            }
 
-            for(node cur = head; cur.next != null; cur = cur.next)
-            {
-                if (cur.next.value == val)
-                {
-                    node temp = cur.next.next;
-                    cur.next.next = null;
-                    cur.next = temp;
-                    length--;
-                    return true; 
-                }
-            }
-            return false;
-        }
+
+
+
+
 
         public void Move_To_Back(int key)
         {
@@ -147,7 +148,6 @@ namespace app
             else
             {
                 node prev = null;
-                node Hnext = head.next;
                 for(node cur = head; cur != null; cur = cur.next)
                 {
                     if (cur.next.next == null)
@@ -156,6 +156,8 @@ namespace app
                         break;
                     }
                 }
+
+                node Hnext = head.next;
                 head.next = null;
                 prev.next = head;
                 tail.next = Hnext;
@@ -170,8 +172,8 @@ namespace app
         public void Left_Rotate(int k)
         {
 
-            if (k % length == 0) return;
-            if (k > length) k = k % length;
+            if (k % length == 0||k%length==0) return;
+            k%=length;
 
             int counter = 1;
             node last = null;
@@ -229,6 +231,11 @@ namespace app
                     counter++;
                 }
             if (indx.Length == 0 ) return;
+            else if (indx.Length == 1) {
+                deleteNthNOde(indx[0] - 48);
+                return;
+            }
+            else
             deleteNthNOde(indx[indx.Length-1]-48);
                     
                 
@@ -398,6 +405,36 @@ namespace app
             }
             return cur;
         }
+
+
+        public bool delete_by_value(int val)
+        {
+            if (head.value == val)
+            {
+                delete_first();
+                return true;
+            }
+            if (tail.value == val)
+            {
+                deleteLastNode();
+                return true;
+            }
+            
+            for (node cur = head; cur.next != null; cur = cur.next)
+            {
+                if (cur.next.value == val)
+                {
+                    node temp = cur.next.next;
+                    cur.next.next = null;
+                    cur.next = temp;
+                    length--;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
         public bool isSame(ref linkedList  l)
         {
             if(length==l.length)
