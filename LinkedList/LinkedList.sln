@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList.csproj", "{A6D4C590-74A1-45AE-AA71-C333AE09B25F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublyLInkedList", "..\DoublyLInkedList\DoublyLInkedList.csproj", "{4D5FFFFD-9ECE-405B-B9B4-C53E030B4500}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoublyLInkedList", "..\DoublyLInkedList\DoublyLInkedList.csproj", "{4D5FFFFD-9ECE-405B-B9B4-C53E030B4500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tree", "..\Tree\Tree.csproj", "{8F0423FA-A76C-47DC-94A4-890192F36E3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4D5FFFFD-9ECE-405B-B9B4-C53E030B4500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D5FFFFD-9ECE-405B-B9B4-C53E030B4500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D5FFFFD-9ECE-405B-B9B4-C53E030B4500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F0423FA-A76C-47DC-94A4-890192F36E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F0423FA-A76C-47DC-94A4-890192F36E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F0423FA-A76C-47DC-94A4-890192F36E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F0423FA-A76C-47DC-94A4-890192F36E3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
