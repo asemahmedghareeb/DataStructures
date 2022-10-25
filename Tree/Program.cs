@@ -1,5 +1,6 @@
 ﻿namespace tree
-{
+{ 
+
     class program{
 
         static void Main()
@@ -72,6 +73,7 @@
             this.data = data;
         }
     }
+    //strict binary tree is the tree which has 0 or 2 children
 
 
 }
