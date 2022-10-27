@@ -53,13 +53,13 @@
         {
             if (root == null)
                 return;
-            s
+            
             postorder(root.left);
             postorder(root.right);
             Console.Write(root.data +" ");
         }
     }
-     -
+     
     class node
     {
         public int data;
