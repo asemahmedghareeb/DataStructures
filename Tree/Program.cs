@@ -74,10 +74,13 @@
     //strict binary tree is the tree which has 0 or 2 children
     // internl node is any node which is not a leaf node even the root node 
 
-    //perfect binary tree is (1)the tree which all leaf nodes have the same level
-    //(2) and all other nodes  have 2 children
+    //perfect binary tree is (1):-the tree which all leaf nodes have the same level
+    //(2):-and all other nodes  have 2 children
 
 
     //complete binary tree is like the  perfect  except the last one which is filled from the left 
 
+    //degenetate tree it is like linked list every node hava only one node at most
+
+    //balane tree is the tree which the differnce between the right and left subtree hight is no more than one
 }
